@@ -9,13 +9,11 @@ public class automationassignobject {
     public static void main(String[] args) throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", "C:/mydriver/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
+
   Scanner sc=new Scanner(System.in);
   System.out.println("which phone you want to search");
   String phone= sc.nextLine();
 
-//        Scanner sc = new Scanner(System.in);
-//        System.out.println("Which phone do you want to search: ");
-//        String phone = sc.nextLine();
 
         driver.get("https://www.amazon.com/");
         WebElement search= driver.findElement(By.xpath("//*[@id=\"twotabsearchtextbox\"]"));

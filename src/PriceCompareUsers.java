@@ -5,14 +5,16 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.util.Scanner;
 public class PriceCompareUsers {
     public static void main(String[] args) throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver", "C:/mydriver/chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
         Scanner sc = new Scanner(System.in);
         System.out.println("Which book do you want to search: ");
         String book = sc.nextLine();
+
+
+        System.setProperty("webdriver.chrome.driver", "C:/mydriver/chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
         driver.get("https://www.snapdeal.com/");
 
-                driver.manage().window().maximize();
+        driver.manage().window().maximize();
         Thread.sleep(1500);
 
         WebElement search = driver.findElement(By.name("keyword"));
@@ -28,8 +30,7 @@ public class PriceCompareUsers {
 
 
         driver.get("https://www.flipkart.com/");
-
-                driver.manage().window().maximize();
+        driver.manage().window().maximize();
         Thread.sleep(1500);
 
         driver.findElement(By.xpath("/html/body/div[2]/div/div/button")).click();
