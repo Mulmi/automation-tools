@@ -5,21 +5,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.Scanner;
 
-import static java.lang.Thread.*;
-
-//    1. Go to https://www.amazon.in.
-//            2. Once page is loaded, search for iPhone XR (64GB) - Yellow.
-//3. Select the matching iPhone once list appears.
-//4. Get the price of the selected iPhone.
-//5. Now, go to https://www.flipkart.com/.
-//            6. Repeat steps 2 to 4 and get the price.
-//            7. Compare the price on both the website and determine which website.
-//    has lesser value for the iPhone and print the final result on the
-//    console.
-public class automationassignment1 {
+public class automationassignobject {
     public static void main(String[] args) throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", "C:/mydriver/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
+  Scanner sc=new Scanner(System.in);
+  System.out.println("which phone you want to search");
+  String phone= sc.nextLine();
 
 //        Scanner sc = new Scanner(System.in);
 //        System.out.println("Which phone do you want to search: ");
@@ -27,7 +19,7 @@ public class automationassignment1 {
 
         driver.get("https://www.amazon.com/");
         WebElement search= driver.findElement(By.xpath("//*[@id=\"twotabsearchtextbox\"]"));
-        search.sendKeys("iPhone XR (64GB) - Yellow");
+        search.sendKeys(phone);
 
         driver.findElement(By.id("nav-search-submit-button")).click();
 
@@ -41,7 +33,7 @@ public class automationassignment1 {
         driver.get("https://www.bestbuy.com/");
 
         WebElement search1= driver.findElement(By.id("gh-search-input"));
-        search1.sendKeys("iPhone XR (64GB) - Yellow");
+        search1.sendKeys(phone);
         search1.submit();
 
         WebElement priceB= driver.findElement(By.xpath("/html/body/div[4]/main/div[11]/div/div/div/div/div/div/div[2]/div[2]/div[4]/div/div[6]/ol/li[4]/div/div/div/div/div/div[2]/div[1]/div/div/div/div/div/div/div[1]/div/div/div/span[1]"));
@@ -59,13 +51,5 @@ public class automationassignment1 {
         }else{
             System.out.println("bestbuy price is less by $"+ (m1-m2));
         }}}
-
-
-
-
-
-
-
-
 
 
