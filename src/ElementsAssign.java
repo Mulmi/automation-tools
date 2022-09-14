@@ -16,15 +16,15 @@ public class ElementsAssign {
 
         List<WebElement> items = africa.findElements(By.tagName("a"));
 
-        for (WebElement e : items) {
-            System.out.println(e.getText());
+        for (WebElement a: items) {
+            System.out.println(a.getText());
+
+            driver.close();
 
             }
-
-
-
         }
         }
+
 
 
 

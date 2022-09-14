@@ -10,6 +10,7 @@ public class datePickers {
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.webdriveruniversity.com/Datepicker/index.html");
 String month="October 2022";
+String day="20";
         WebElement datePicker= driver.findElement(By.xpath("//*[@id=\"datepicker\"]/span/i"));
     datePicker.click();
     Thread.sleep(3000);
@@ -24,5 +25,5 @@ while(true)
    {
      driver.findElement(By.xpath("/html/body/div[2]/div[1]/table/thead/tr[1]/th[3]")).click();
    }
-    driver.findElement(By.xpath("/html/body/div[2]/div[1]/table/tbody/tr/td[contains(text(),'20')]")).click();
+    driver.findElement(By.xpath("/html/body/div[2]/div[1]/table/tbody/tr/td[contains(text(),"+day+")]")).click();
 }}}
